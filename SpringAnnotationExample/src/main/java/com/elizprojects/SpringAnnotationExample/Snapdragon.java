@@ -1,5 +1,8 @@
 package com.elizprojects.SpringAnnotationExample;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Snapdragon implements PhoneProcessor {
 
 	public void process() {
