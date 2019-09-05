@@ -1,0 +1,5 @@
+com\apisuite\MyWeatherAPI\DatabaseHelper.class
+com\apisuite\MyWeatherAPI\WeatherData.class
+com\apisuite\MyWeatherAPI\BootstrapConfig.class
+com\apisuite\MyWeatherAPI\WeatherAPIMasterSuite.class
+com\apisuite\MyWeatherAPI\WeatherDatabaseHandler.class

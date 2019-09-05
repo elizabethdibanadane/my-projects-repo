@@ -1,0 +1,22 @@
+
+GET - fetching resource
+POST - creating resource
+PUT - updating resource
+DELETE - removing resource
+
+Used AdvancedRESTClient for testing
+
+
+URIs
+http://localhost:8080/webapi/weatherAPI/fetchAllCityData
+http://localhost:8080/webapi/weatherAPI/getWeatherDataById/1
+http://localhost:8080/webapi/weatherAPI/getExtremeWeatherData
+http://localhost:8080/webapi/weatherAPI/addWeatherRecordData
+	<weatherData>
+		<city>Timaru</city>
+		<date>2019-04-15T00:00:00+12:00</date>
+		<id>4</id>
+		<rain>13</rain>
+		<temperature>15</temperature>
+		<wind>6</wind>
+	</weatherData>

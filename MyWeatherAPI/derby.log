@@ -1,0 +1,19 @@
+----------------------------------------------------------------
+Thu Sep 05 23:24:17 NZST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016d-012a-fcf8-0000092be7e8 
+on database directory C:\Users\Hakkim\eclipse-workspaceJEEWebApp\MyWeatherAPI\weatherdb with class loader ContextLoader@null 
+Loaded from file:/C:/Users/Hakkim/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_181-b13
+user.dir=C:\Users\Hakkim\eclipse-workspaceJEEWebApp\MyWeatherAPI
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Thu Sep 05 23:26:29 NZST 2019: Shutting down Derby engine
+----------------------------------------------------------------
+Thu Sep 05 23:26:29 NZST 2019:
+Shutting down instance a816c00e-016d-012a-fcf8-0000092be7e8 on database directory C:\Users\Hakkim\eclipse-workspaceJEEWebApp\MyWeatherAPI\weatherdb with class loader ContextLoader@null 
+----------------------------------------------------------------
