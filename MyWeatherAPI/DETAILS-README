@@ -4,6 +4,7 @@ POST - creating resource
 PUT - updating resource
 DELETE - removing resource
 
+Used eclipse IDE with maven and jersey
 Used AdvancedRESTClient for testing
 
 
@@ -12,6 +13,7 @@ http://localhost:8080/webapi/weatherAPI/fetchAllCityData
 http://localhost:8080/webapi/weatherAPI/getWeatherDataById/1
 http://localhost:8080/webapi/weatherAPI/getExtremeWeatherData
 http://localhost:8080/webapi/weatherAPI/addWeatherRecordData
+
 	<weatherData>
 		<city>Timaru</city>
 		<date>2019-04-15T00:00:00+12:00</date>
@@ -20,3 +22,15 @@ http://localhost:8080/webapi/weatherAPI/addWeatherRecordData
 		<temperature>15</temperature>
 		<wind>6</wind>
 	</weatherData>
+	
+http://localhost:8080/webapi/weatherAPI/updateWeatherRecordData
+	<weatherData>
+		<city>Timaru</city>
+		<date>2019-04-15T00:00:00+12:00</date>
+		<id>4</id>
+		<rain>1</rain>
+		<temperature>1</temperature>
+		<wind>1</wind>
+	</weatherData>
+	
+http://localhost:8080/webapi/weatherAPI/removeWeatherDataById/4

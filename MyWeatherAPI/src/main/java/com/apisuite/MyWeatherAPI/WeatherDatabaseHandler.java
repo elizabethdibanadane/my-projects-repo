@@ -1,7 +1,6 @@
 package com.apisuite.MyWeatherAPI;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -157,7 +156,7 @@ public class WeatherDatabaseHandler {
 	 * 
 	 * 
 	 ********************************************************************************************/
-	public void addWeatherRecordData(WeatherData myWeatherData) {
+	public void addWeatherRecordData(WeatherData aWeatherData) {
 		
 		//insert query
 		String myInsertQuery = "insert into cities_weather (city,date,temperature,wind,rain) values (?,?,?,?,?)";
@@ -167,11 +166,11 @@ public class WeatherDatabaseHandler {
 			PreparedStatement mySQLQueryStatement = myDBConnection.prepareStatement(myInsertQuery);
 					
 			//mySQLQueryStatement.setInt(1,myWeatherData.getId());
-			mySQLQueryStatement.setString(2,myWeatherData.getCity());
-			mySQLQueryStatement.setDate(3, (Date) myWeatherData.getDate());
-			mySQLQueryStatement.setLong(4, myWeatherData.getTemperature());
-			mySQLQueryStatement.setInt(5,myWeatherData.getWind());
-			mySQLQueryStatement.setInt(6,myWeatherData.getRain());
+			mySQLQueryStatement.setString(1,aWeatherData.getCity());
+			mySQLQueryStatement.setDate(2, new java.sql.Date((aWeatherData.getDate().getTime())));
+			mySQLQueryStatement.setLong(3, aWeatherData.getTemperature());
+			mySQLQueryStatement.setInt(4,aWeatherData.getWind());
+			mySQLQueryStatement.setInt(5,aWeatherData.getRain());
 			mySQLQueryStatement.executeUpdate();
 						
 			
@@ -182,12 +181,53 @@ public class WeatherDatabaseHandler {
 		
 	}
 	/*******************************************************************************************
-	 * Adds a new weather record to the table
+	 * Modifies a  weather record in the table
 	 * 
 	 * 
 	 ********************************************************************************************/
-	public void modifyWeatherRecordData(WeatherData myWeatherData) {
-		
+	public void modifyWeatherRecordData(WeatherData aWeatherData) {
+		//update query
+		String myUpdateQuery = "update cities_weather set city=?,date=?,temperature=?,wind=?,rain=? where id=?";
+						
+								
+		try {
+			PreparedStatement mySQLQueryStatement = myDBConnection.prepareStatement(myUpdateQuery);
+							
+			mySQLQueryStatement.setString(1,aWeatherData.getCity());
+			mySQLQueryStatement.setDate(2, new java.sql.Date((aWeatherData.getDate().getTime())));
+			mySQLQueryStatement.setLong(3, aWeatherData.getTemperature());
+			mySQLQueryStatement.setInt(4,aWeatherData.getWind());
+			mySQLQueryStatement.setInt(5,aWeatherData.getRain());
+			mySQLQueryStatement.setInt(6,aWeatherData.getId());
+			mySQLQueryStatement.executeUpdate();
+								
+					
+			}
+			catch(SQLException mySQLException) {
+				System.out.println(mySQLException);
+			}
+	}
+	/*******************************************************************************************
+	 * Removes a weather record in the table
+	 * 
+	 * 
+	 ********************************************************************************************/
+	public void removeOneRecordData(int aIdToRemove) {
+		//delete query
+		String myUpdateQuery = "delete from cities_weather where id=?";
+								
+										
+		try {
+			PreparedStatement mySQLQueryStatement = myDBConnection.prepareStatement(myUpdateQuery);
+									
+			mySQLQueryStatement.setInt(1,aIdToRemove);
+			mySQLQueryStatement.executeUpdate();
+										
+							
+			}
+			catch(SQLException mySQLException) {
+				System.out.println(mySQLException);
+			}
 	}
 	
 
